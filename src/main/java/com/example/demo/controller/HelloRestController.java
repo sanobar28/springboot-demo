@@ -1,7 +1,14 @@
+/**
+ * @author Sanobar Mujawar
+ * @since 06.08.21
+ * 
+ * Purpose: Using rest controller for get, put, post methods
+ * from url
+ */
+
 package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
-
 import com.example.demo.model.User;
 
 /**
