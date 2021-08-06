@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.model.User;
+
 /**
  * RestController mapping request data to define request handler method. Used to
  * create RESTful web services
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/hello")
 public class HelloRestController {
-	
-	//UC1
+
+	// UC1 - Display message 
 	@RequestMapping(value = { "", "/", "/home" })
 	public String index() {
 		return "Hello from Bridgelabz";
@@ -36,7 +38,15 @@ public class HelloRestController {
 	public String sayHelloParam(@PathVariable String name) {
 		return "Hello " + name + "!";
 	}
-	
-	
+
+	/**
+	 * UC4- POST Request Method and pass first name and last name in the Body
+	 * @param user
+	 * @return
+	 */
+	@PostMapping("/post")
+	public String sayHello(@RequestBody User user) {
+		return "Hello " + user.getFirstName() + " " + user.getLastName() + "!";
+	}
 
 }
